@@ -2,12 +2,15 @@ import random
 import streamlit as st
 
 def get_range_for_difficulty(difficulty: str):
+    # Bug fix: ranges now grow with difficulty (a larger range = more numbers
+    # to guess = harder). Previously Normal (1-100) was harder than Hard
+    # (1-50). Order is now Easy < Normal < Hard.
     if difficulty == "Easy":
         return 1, 20
     if difficulty == "Normal":
-        return 1, 100
-    if difficulty == "Hard":
         return 1, 50
+    if difficulty == "Hard":
+        return 1, 100
     return 1, 100
 
 
@@ -110,8 +113,9 @@ if "history" not in st.session_state:
 
 st.subheader("Make a guess")
 
+# Bug fix: use the actual difficulty range instead of a hardcoded 1-100.
 st.info(
-    f"Guess a number between 1 and 100. "
+    f"Guess a number between {low} and {high}. "
     f"Attempts left: {attempt_limit - st.session_state.attempts}"
 )
 
