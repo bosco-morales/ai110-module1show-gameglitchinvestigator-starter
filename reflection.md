@@ -4,6 +4,14 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 
 ## 1. What was broken when you started?
 
+I entered a guess of 50. The hint was "Go HIGHER", then I entered 100 and it kept hinting "Go HIGHER"
+
+Then I clicked new game and my previous guess remained in the "Enter your guess" text box.
+
+New game, started at 40 and kept hinting "Go Lower" until I hit 1. Cannot go any lower than 1. The actual value was 73.
+
+After winning a game. The game did not respond when playing hard
+
 - What did the game look like the first time you ran it?
 - List at least two concrete bugs you noticed at the start  
   (for example: "the hints were backwards").
@@ -14,9 +22,9 @@ Document at least 3 bugs you found. Add rows as needed.
 
 | Input | Expected Behavior | Actual Behavior | Console Output / Error |
 |-------|-------------------|-----------------|------------------------|
-| | | | |
-| | | | |
-| | | | |
+| guess of 100| hint: go higher | hint: go lower  |"None" |
+| guess of 1| hint: go lower | hint: go higher | "None"|
+| Click on New Game after winning| Creates a clean new game | Game does not react to input guess|"None" |
 
 ---
 
